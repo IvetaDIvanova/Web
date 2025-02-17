@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Linq;
 using Web.Models;
 
 namespace Web.Controllers
@@ -15,7 +16,22 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
+            var theme = Request.Cookies["UserPreferences"] ?? "Light";
+            ViewBag.Theme = theme;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangeTheme(string theme)
+        {
+            Response.Cookies.Append("UserPreferences", theme, new CookieOptions
+            {
+                Expires = DateTime.UtcNow.AddYears(1),
+                HttpOnly = true,
+                IsEssential = true
+            });
+            return RedirectToAction("Index");
+            
         }
 
         public IActionResult Privacy()

@@ -18,5 +18,17 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: white;
+    color: black;
+}
+
+body.theme-dark{
+    background-color: #121212;
+    color: white;
+}
+
+body.theme-light{
+    background-color: white;
+    color: #121212;
 }
