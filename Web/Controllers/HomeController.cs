@@ -30,8 +30,7 @@ namespace Web.Controllers
                 HttpOnly = true,
                 IsEssential = true
             });
-            return RedirectToAction("Index");
-            
+            return RedirectToAction("Index");       
         }
 
         public IActionResult Privacy()

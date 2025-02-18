@@ -1,0 +1,26 @@
+﻿@{
+    var CurrentSession = ViewBag.Session;
+}
+
+<h2>Current session status</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Set</th>
+            <th>Get</th>
+            <th>Clear</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td> <a asp-action="SetSession">Set Session</a> </td>
+                <td> <a asp-action="GetSession">Get Session</a> </td>
+                <td> <a asp-action="ClearSession">Clear Session</a> </td>
+                <td> <a asp-action="ActiveSession">Session status</a> </td>
+            </tr>
+    </tbody>
+</table>
+
